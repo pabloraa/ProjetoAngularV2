@@ -1,13 +1,19 @@
 <div>
   <h1>Cadastro de Tarefas</h1>
   <ul>
-    <li *ngFor="let item of items">
-      {{item}} <button (click)="removerTarefa(item)">Remover</button>
+    <li *ngFor="let item of tarefas">
+      {{item.descricao}} <button (click)="removerTarefa(item)" type="button" class="btn btn-danger">Remover</button>
+      <input type="text" [(ngModel)] = "item.valorUpdate">
+      <button (click)="updateTarefa(item)" type="button" class="btn btn-primary">Atualizar</button>
     </li>
+  </ul>
+  <ul>
+    
   </ul>
 
   {{tarefa}}
 
-  <input type="text" [(ngModel)] ="tarefa" >
-  <button (click)="addTarefa()">Adicionar</button>
+  <input type="text" [(ngModel)] ="tarefa"id="texto" class="form-control" placeholder="Descrição">
+  <button (click)="addTarefa()" type="button" class="btn btn-primary">Adicionar</button>
+ 
 </div>

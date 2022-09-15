@@ -13,12 +13,12 @@ export class AppComponent {
   public tarefa="";
   public tarefas= ListToDo
   
-  http: any;
+  //http: any;
  addTarefa(){
   let tarefaTeste: ItemToDo={
     id: '1',
     descricao: this.tarefa,
-    dataCriacao: 0,
+    dataCriacao: new Date().toLocaleString(),
     valorUpdate: '',
   }
   this.tarefas.push(tarefaTeste);
@@ -34,4 +34,7 @@ updateTarefa(item: ItemToDo){
   item.descricao = item.valorUpdate
   item.valorUpdate =''
 }
+
+data = new Date().toLocaleDateString();
+
 }
